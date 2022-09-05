@@ -3,28 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Klasside_Isik_Lember.Tootaja;
 
 namespace Klasside_Isik_Lember
 {
-    //class Opilane : Isik
-    //{
-    //    public string school;
-    //    public string grade;
-    //    public enum Grupp { Strong, Weak }
-    //    public Grupp grupp;
+    class Opilane : Isik
+    {
+        public string school;
+        public string grade;
+        public enum Grupp { strong, weak }
+        public Grupp grupp;
+        
 
 
 
-    //    public Opilane(string name, int dateofbirth, Sex sex,Grupp grupp,string school,string grade) : base(name, dateofbirth, sex)
-    //    {
-    //        this.grupp = grupp;
-    //        this.grade = grade;
-    //        this.school = school;
-    //    }
+        public Opilane(string name, int dateofbirth, Sex sex, Grupp grupp, string school, string grade) : base(name, dateofbirth, sex)
+        {
+            this.grupp = grupp;
+            this.grade = grade;
+            this.school = school;
+        }
 
-    //    public override void PrintInfo()
-    //    {
-    //        Console.WriteLine();
-    //    }
-    //}
+        public override double calSalary(double nonTaxRef, double Tax)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void PrintInfo()
+        {
+            Console.WriteLine($"CLASS >>> Opilane\nNAME >>> {name}\nAGE_OF_BIRTH >>> {dateofbirth}\nAGE >>> {age}\nGENDER >>> {sex}\nSchool >>> {school}\nGrade >>> {grade}\nGrupp >>> {grupp}");
+        }
+    }
 }

@@ -9,13 +9,14 @@ namespace Klasside_Isik_Lember
     public abstract class Isik
     {
         public string name { get; set; }
-        public int dateofbirth;
+        public int dateofbirth {get;set;}
         public enum Sex {Male, Female }
         public Sex sex;
         public enum Nationality { Estonian, British, Latvian, Italian }
         public Nationality nationality;
         public double weight;
         public double height;
+        public int age;
 
         public Isik(string name, int dateofbirth, Sex sex)
         {
@@ -49,7 +50,7 @@ namespace Klasside_Isik_Lember
 
         public int calAge() 
         {
-            int age = DateTime.Now.Year - dateofbirth;
+            age = DateTime.Now.Year - dateofbirth;
             return age;
         }
 
