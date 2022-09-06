@@ -19,26 +19,21 @@ List<Isik> people = new List<Isik>();
 people.Add(bob);
 people.Add(bib);
 people.Add(beb);
-StreamWriter to_file = new StreamWriter(@"..\..\..\file.txt", false);
-foreach (Isik b in people)
+
+StreamWriter to_file = new StreamWriter(@"......\file.txt", false);
+foreach (Isik p in people)
 {
-    b.PrintInfo();
-    Console.WriteLine("----------------------------------Person information--------------------------------");
-    to_file.WriteLine(b.name + "," + b.calAge() + "," + b.sex + ";");
+    p.PrintInfo();
+    to_file.WriteLine(p.name + "," + p.calAge() + "," + p.sex + ";");
 }
 to_file.Close();
-StreamReader from_file = new StreamReader(@"..\..\..\file.txt");
-int lines= from_file.ReadToEnd().Split(new char[] { ';' } ).Count()-1;
-Console.WriteLine(lines);
-
-for (int i = 0; i < lines; i++)
+var fromfile = File.ReadAllLines(@"......\file.txt");
+StreamReader from_file = new StreamReader(@"......\file.txt");
+int line_count = from_file.ReadToEnd().Split(new char[] { ';' }).Length - 1;
+Console.WriteLine(line_count);
+for (int i = 0; i < people.Count; i++)
 {
-    int rows = from_file.ReadLine().Split(new char [] { ',' }).Length;
-    Console.WriteLine(rows);
+    string[] row_count = fromfile[i].Split(',');
+    Console.WriteLine("1 - " + row_count[0] + " 2 - " + row_count[1] + " 3 - " + row_count[2].Split(';')[0]);
 }
-
-
-
 from_file.Close();
-//string text = from_file.ReadToEnd();
-//Console.WriteLine(text);
