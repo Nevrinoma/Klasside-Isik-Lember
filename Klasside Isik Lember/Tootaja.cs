@@ -16,12 +16,6 @@ namespace Klasside_Isik_Lember
         public double netto;
         
 
-
-        
-        
-
-
-
         public Tootaja(string name, int dateofbirth, Sex sex,Post post,string workPlace,double salary ) : base(name, dateofbirth, sex)
         {
             this.post = post;
@@ -37,7 +31,7 @@ namespace Klasside_Isik_Lember
 
         public override void PrintInfo()
         {
-            Console.WriteLine($"CLASS >>> Tootaja\nNAME >>> {name}\nAGE_OF_BIRTH >>> {dateofbirth}\nAGE >>> {age}\nGENDER >>> {sex}\nPOST >>> {post}\nWORK_PLACE >>> {workPlace}\nSALARY >>> {netto}");
+            Console.WriteLine($"CLASS >>> Tootaja\nNAME >>> {name}\nAGE_OF_BIRTH >>> {dateofbirth}\nAGE >>> {base.calAge()}\nGENDER >>> {sex}\nPOST >>> {post}\nWORK_PLACE >>> {workPlace}\nSALARY >>> {netto}");
         }
 
 

@@ -8,7 +8,5 @@ bob.calAge();
 Opilane bib = new Opilane("Bib", 1998, Isik.Sex.Female, Opilane.Grupp.strong, "School of Bibo", "STARpv21");
 bib.calAge();
 //bib.PrintInfo();
-Kutsekooliopilane beb = new Kutsekooliopilane("Beb", 1993, Isik.Sex.Male, Kutsekooliopilane.Specialization.SoftwareDeveloper, "University of Bebra", 3, 60.0);
-beb.calAge();
-beb.ostlet();
+Kutsekooliopilane beb = new Kutsekooliopilane("Beb", 1993, Isik.Sex.Male, Kutsekooliopilane.Specialization.Mathematician,Kutsekooliopilane.Family.Small, "University of Bebra", 3);
 beb.PrintInfo();

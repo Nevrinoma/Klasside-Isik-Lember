@@ -14,6 +14,7 @@ namespace Klasside_Isik_Lember
         public enum Grupp { strong, weak }
         public Grupp grupp;
         
+        
 
 
 
@@ -31,7 +32,7 @@ namespace Klasside_Isik_Lember
 
         public override void PrintInfo()
         {
-            Console.WriteLine($"CLASS >>> Opilane\nNAME >>> {name}\nAGE_OF_BIRTH >>> {dateofbirth}\nAGE >>> {age}\nGENDER >>> {sex}\nSchool >>> {school}\nGrade >>> {grade}\nGrupp >>> {grupp}");
+            Console.WriteLine($"CLASS >>> Opilane\nNAME >>> {name}\nAGE_OF_BIRTH >>> {dateofbirth}\nAGE >>> {base.calAge()}\nGENDER >>> {sex}\nSchool >>> {school}\nGrade >>> {grade}\nGrupp >>> {grupp}");
         }
     }
 }

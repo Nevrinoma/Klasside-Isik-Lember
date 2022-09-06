@@ -14,7 +14,45 @@ namespace Klasside_Isik_Lember
         public int yearofstudy;
         public double scholarship;
         public int vsego;
-        public int ostalos { get; set; }
+        public enum Family { Large, Small }
+        public Family family;
+        double poda4ki;
+
+        public double Poda4ki()
+        {
+            if (family == Family.Large)
+            {
+                poda4ki = 80.5;
+            }
+            else if (family == Family.Small)
+            {
+                poda4ki = 40.5;
+            }
+            return poda4ki;
+        }
+
+
+
+        public double Scholarship() 
+        {
+            if (specialization == Specialization.SoftwareDeveloper)
+            {
+                scholarship = 120.0;
+            }
+            else if (specialization == Specialization.Roboticist)
+            {
+                scholarship = 100.5;
+            }
+            else if (specialization == Specialization.Mathematician)
+            {
+                scholarship = 380.1;
+            }
+
+            scholarship = scholarship + Poda4ki();
+            return scholarship;
+        }
+
+        public void change_Spec(Specialization newSpec) { specialization = newSpec; }
 
         public int ostlet()
         {
@@ -30,23 +68,16 @@ namespace Klasside_Isik_Lember
             {
                 vsego = 8;
             }
-            ostalos = vsego - yearofstudy;
+            int ostalos = vsego - yearofstudy;
             return ostalos;
         }
 
-
-
-
-
-
-
-
-        public Kutsekooliopilane(string name, int dateofbirth, Sex sex,Specialization specialization,string institution,int yearofstudy,double scholarship) : base(name, dateofbirth, sex)
+        public Kutsekooliopilane(string name, int dateofbirth, Sex sex,Specialization specialization,Family family,string institution,int yearofstudy) : base(name, dateofbirth, sex)
         {
             this.specialization = specialization;
+            this.family = family;   
             this.institution = institution;
             this.yearofstudy = yearofstudy;
-            this.scholarship = scholarship;
         }
 
         public override double calSalary(double nonTaxRef, double Tax)
@@ -56,7 +87,7 @@ namespace Klasside_Isik_Lember
 
         public override void PrintInfo()
         {
-            Console.WriteLine($"CLASS >>> Kutsekooliopilane\nNAME >>> {name}\nAGE_OF_BIRTH >>> {dateofbirth}\nAGE >>> {age}\nGENDER >>> {sex}\nSPECIALIZATION >>> {specialization}\nINSTITUTION >>> {institution}\nYEAR_OF_STUDY >>> {yearofstudy}\nSCHOOLARSHIP >>> {scholarship}\nREMAINING_YEARS_OF_STUDY >>> {ostalos}");
+            Console.WriteLine($"CLASS >>> Kutsekooliopilane\nNAME >>> {name}\nAGE_OF_BIRTH >>> {dateofbirth}\nAGE >>> {base.calAge()}\nGENDER >>> {sex}\nFAMILY >>> {family}\nSPECIALIZATION >>> {specialization}\nINSTITUTION >>> {institution}\nYEAR_OF_STUDY >>> {yearofstudy}\nSCHOOLARSHIP >>> {Scholarship()}\nREMAINING_YEARS_OF_STUDY >>> {ostlet()}");
         }
     }
 }

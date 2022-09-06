@@ -1,8 +1,14 @@
-﻿using System;
+﻿using Klasside_Isik_Lember;
+using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using static Klasside_Isik_Lember.Kutsekooliopilane;
+using System.Xml.Linq;
 
 namespace Klasside_Isik_Lember
 {
@@ -16,7 +22,7 @@ namespace Klasside_Isik_Lember
         public Nationality nationality;
         public double weight;
         public double height;
-        public int age;
+        //public int age;
 
         public Isik(string name, int dateofbirth, Sex sex)
         {
@@ -50,7 +56,7 @@ namespace Klasside_Isik_Lember
 
         public int calAge() 
         {
-            age = DateTime.Now.Year - dateofbirth;
+            int age = DateTime.Now.Year - dateofbirth;
             return age;
         }
 
@@ -58,3 +64,4 @@ namespace Klasside_Isik_Lember
 
     }
 }
+
