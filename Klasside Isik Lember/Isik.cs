@@ -22,7 +22,6 @@ namespace Klasside_Isik_Lember
         public Nationality nationality;
         public double weight;
         public double height;
-        //public int age;
 
         public Isik(string name, int dateofbirth, Sex sex)
         {
@@ -48,7 +47,6 @@ namespace Klasside_Isik_Lember
             this.dateofbirth = dateofbirth;
         }
 
-        //public Isik()
 
         public abstract void PrintInfo();
 

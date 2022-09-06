@@ -48,11 +48,11 @@ namespace Klasside_Isik_Lember
                 scholarship = 380.1;
             }
 
-            scholarship = scholarship + Poda4ki();
+            scholarship += Poda4ki();
             return scholarship;
         }
 
-        public void change_Spec(Specialization newSpec) { specialization = newSpec; }
+        public void Change_Spec(Specialization newSpec) { specialization = newSpec; }
 
         public int ostlet()
         {

@@ -14,7 +14,9 @@ namespace Klasside_Isik_Lember
         Post post;
         public double salary;
         public double netto;
-        
+
+        public void Change_Post(Post newPost) { post = newPost; }
+
 
         public Tootaja(string name, int dateofbirth, Sex sex,Post post,string workPlace,double salary ) : base(name, dateofbirth, sex)
         {

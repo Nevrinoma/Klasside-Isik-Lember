@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Klasside_Isik_Lember.Kutsekooliopilane;
 using static Klasside_Isik_Lember.Tootaja;
 
 namespace Klasside_Isik_Lember
@@ -14,7 +15,11 @@ namespace Klasside_Isik_Lember
         public enum Grupp { strong, weak }
         public Grupp grupp;
         
-        
+
+
+
+        public void Change_School(string newSchool) { school = newSchool; }
+
 
 
 
