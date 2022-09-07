@@ -20,20 +20,28 @@ people.Add(bob);
 people.Add(bib);
 people.Add(beb);
 
-StreamWriter to_file = new StreamWriter(@"......\file.txt", false);
+StreamWriter to_file = new StreamWriter(@"..\..\..\file.txt", false);
 foreach (Isik p in people)
 {
     p.PrintInfo();
-    to_file.WriteLine(p.name + "," + p.calAge() + "," + p.sex + ";");
+    Console.WriteLine();
+    
+    to_file.WriteLine(p.GetType().Name + "," + p.name + "," + p.calAge() + "," + p.sex + ";");
 }
 to_file.Close();
-var fromfile = File.ReadAllLines(@"......\file.txt");
-StreamReader from_file = new StreamReader(@"......\file.txt");
-int line_count = from_file.ReadToEnd().Split(new char[] { ';' }).Length - 1;
-Console.WriteLine(line_count);
+
+var fromfile = File.ReadAllLines(@"..\..\..\file.txt");
+StreamReader from_file = new StreamReader(@"..\..\..\file.txt");
+
+
 for (int i = 0; i < people.Count; i++)
 {
+
     string[] row_count = fromfile[i].Split(',');
     Console.WriteLine("1 - " + row_count[0] + " 2 - " + row_count[1] + " 3 - " + row_count[2].Split(';')[0]);
+
 }
+
+
+
 from_file.Close();
