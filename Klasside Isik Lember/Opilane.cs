@@ -14,7 +14,8 @@ namespace Klasside_Isik_Lember
         public string grade;
         public enum Grupp { strong, weak }
         public Grupp grupp;
-        
+        public double salary;
+        public double netto;
 
 
 
@@ -30,9 +31,10 @@ namespace Klasside_Isik_Lember
             this.school = school;
         }
 
-        public override double calSalary(double nonTaxRef, double Tax)
+        public override double calSalary(double nonTaxRef, double tax)
         {
-            throw new NotImplementedException();
+            netto = ((salary - nonTaxRef) * (1 - (tax / 100))) + nonTaxRef;
+            return netto;
         }
 
         public override void PrintInfo()

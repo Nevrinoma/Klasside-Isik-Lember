@@ -17,6 +17,8 @@ namespace Klasside_Isik_Lember
         public enum Family { Large, Small }
         public Family family;
         double poda4ki;
+        public double salary;
+        public double netto;
 
         public double Poda4ki()
         {
@@ -80,9 +82,10 @@ namespace Klasside_Isik_Lember
             this.yearofstudy = yearofstudy;
         }
 
-        public override double calSalary(double nonTaxRef, double Tax)
+        public override double calSalary(double nonTaxRef, double tax)
         {
-            throw new NotImplementedException();
+            netto = ((salary - nonTaxRef) * (1 - (tax / 100))) + nonTaxRef;
+            return netto;
         }
 
         public override void PrintInfo()

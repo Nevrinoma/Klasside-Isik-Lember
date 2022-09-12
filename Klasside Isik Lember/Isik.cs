@@ -22,6 +22,7 @@ namespace Klasside_Isik_Lember
         public Nationality nationality;
         public double weight;
         public double height;
+        public string workPlace;
 
         public Isik(string name, int dateofbirth, Sex sex)
         {
@@ -58,7 +59,7 @@ namespace Klasside_Isik_Lember
             return age;
         }
 
-        public abstract double calSalary(double nonTaxRef,double Tax);
+        public abstract double calSalary(double nonTaxRef,double tax);
 
     }
 }

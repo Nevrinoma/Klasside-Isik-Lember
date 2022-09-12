@@ -15,6 +15,12 @@ bib.calAge();
 Kutsekooliopilane beb = new Kutsekooliopilane("Beb", 1993, Isik.Sex.Male, Kutsekooliopilane.Specialization.Mathematician,Kutsekooliopilane.Family.Small, "University of Bebra", 3);
 //beb.PrintInfo();
 
+
+
+
+List<Tootaja> tootajad = new List<Tootaja>();
+List<Opilane> opilased = new List<Opilane>();
+List<Kutsekooliopilane> kutsekooliopilased = new List<Kutsekooliopilane>();
 List<Isik> people = new List<Isik>();
 people.Add(bob);
 people.Add(bib);
@@ -26,7 +32,7 @@ foreach (Isik p in people)
     p.PrintInfo();
     Console.WriteLine();
     
-    to_file.WriteLine(p.GetType().Name + "," + p.name + "," + p.calAge() + "," + p.sex + ";");
+    to_file.WriteLine(p.GetType().Name + "," + p.name + "," + p.calAge() + "," + p.sex + "," + p.GetType().GetEnumValues + "," + p.workPlace + p.calSalary(500.0, 20.0) + ";");
 }
 to_file.Close();
 
@@ -38,9 +44,25 @@ for (int i = 0; i < people.Count; i++)
 {
 
     string[] row_count = fromfile[i].Split(',');
-    Console.WriteLine("1 - " + row_count[0] + " 2 - " + row_count[1] + " 3 - " + row_count[2].Split(';')[0]);
+    
+    Console.WriteLine("class - " + row_count[0] +"\n name - " + row_count[1] + "\n age - " + row_count[2] + "\n gender - " + row_count[3] + "\n post - " + row_count[4] + "\n workplace - " + "\n salary - " + row_count[5].Split(';')[0]);
 
 }
+
+//for (int i = 0; i < people.count; i++)
+//{
+
+//    string[] row_count = fromfile[i].split(',');
+//    if (row_count[0] =="tootaja")
+//    {
+//        tootaja (row_count[1]) = new tootaja(row_count[1],)
+//        tootajad.add(row_count[1]);
+//    }
+
+//}
+
+
+
 
 
 
